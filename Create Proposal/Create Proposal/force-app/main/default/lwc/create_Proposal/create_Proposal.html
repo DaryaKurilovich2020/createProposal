@@ -1,0 +1,33 @@
+<template>
+    <div class="slds-m-top_medium slds-m-bottom_x-large">
+        <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+           Client contact information
+        </h2>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="First name" id="clFN"  required></lightning-input>
+        </div>
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="text" label="Last name" id="ClLN"  required></lightning-input>
+        </div>
+    
+        <div class="slds-p-around_medium lgc-bg">
+            <lightning-input type="email" id="ClE" placeholder="you@email.com" required></lightning-input>
+        </div>
+    </div>
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+               Partner agent contact information
+            </h2>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="text" label="First name" id="PFN" required></lightning-input>
+            </div>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="text" label="Last name" id="PLN" required></lightning-input>
+            </div>
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="email" id="PE" label="Email address" placeholder="you@email.com" required></lightning-input>
+            </div>
+        </div>
+        <lightning-button label="cancel" onclick={closeAction}></lightning-button>
+        <lightning-button label="next" onclick={handleClick}></lightning-button>
+</template>
