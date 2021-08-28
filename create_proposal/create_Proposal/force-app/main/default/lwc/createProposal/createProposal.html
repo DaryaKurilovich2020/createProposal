@@ -1,0 +1,58 @@
+<template>
+    <template if:true={templateContactInput}>
+       <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+             Client contact information h
+          </h2>
+          <div class="slds-p-around_medium lgc-bg">
+             <lightning-input type="text" label="First name" value ={clientFirstname} name="ClFN" required></lightning-input>
+          </div>
+          <div class="slds-p-around_medium lgc-bg">
+             <lightning-input type="text" label="Last name" name="ClLN" value={clientLastname} required></lightning-input>
+          </div>
+          <div class="slds-p-around_medium lgc-bg">
+             <lightning-input type="email" name="ClE" label="Email address" value={clientEmail} placeholder="you@email.com" required>
+             </lightning-input>
+          </div>
+       </div>
+       <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+             Partner agent contact information 
+          </h2>
+          <div class="slds-p-around_medium lgc-bg">
+             <lightning-input type="text" label="First name" name="PFN" value={partnerFirstname} required></lightning-input>
+          </div>
+          <div class="slds-p-around_medium lgc-bg">
+             <lightning-input type="text" label="Last name" name="PLN" value={partnerLastname} required></lightning-input>
+          </div>
+          <div class="slds-p-around_medium lgc-bg">
+             <lightning-input type="email" name="PE" label="Email address" value={partnerEmail} placeholder="you@email.com" required>
+             </lightning-input>
+          </div>
+       <div  class="slds-p-around_medium lgc-bg">
+          <lightning-button label="next" class="slds-float_right" onclick={handleClick}></lightning-button>
+       </div>
+    </div>
+    </template>
+    
+    <template if:false={templateContactInput}>
+       <div class="slds-m-top_medium slds-m-bottom_x-large">
+          <h2 class="slds-text-heading_medium slds-m-bottom_medium">
+             Property
+          </h2>
+          <div class="slds-p-around_medium lgc-bg">
+             <lightning-datatable key-field="Id" data={data} onrowselection={handleRowSelection} columns={columns} max-row-selection="1">
+             </lightning-datatable>
+          </div>
+          <div class="slds-m-top_medium slds-m-bottom_x-large">
+             <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="currency" name="price" value={price} label="Agreed price"></lightning-input>
+             </div>
+          </div>
+          <div  class="slds-p-around_medium lgc-bg">
+             <lightning-button label="finish" class="slds-float_right" onclick={handleFinish}></lightning-button>
+             <lightning-button label="previous" class="slds-float_right" onclick={switchTemplate}></lightning-button>
+          </div>
+       </div>
+    </template>
+</template>
